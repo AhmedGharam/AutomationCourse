@@ -50,5 +50,6 @@ public class loginClass {
         driver.findElement(By.cssSelector(".fa.fa-2x.fa-sign-in")).click();
         assertTrue(driver.findElement(By.cssSelector(".flash.error")).getText().contains("Your password is invalid!"));
         driver.close();
+        //guuyy
     }
 }
