@@ -1,12 +1,12 @@
-package firstPackage;
+package formAuthenticationTests;
 
-import Base.Base;
+import base.BaseTests;
 import org.openqa.selenium.By;
 import org.testng.annotations.Test;
 
 import static org.testng.Assert.assertTrue;
 
-public class FormAuthenticationTests extends Base {
+public class FormAuthenticationTests extends BaseTests {
 
 
     @Test(priority = 1)

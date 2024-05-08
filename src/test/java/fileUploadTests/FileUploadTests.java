@@ -1,14 +1,13 @@
-package firstPackage;
+package fileUploadTests;
 
-import Base.Base;
+import base.BaseTests;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
 
 import static org.testng.Assert.assertFalse;
 import static org.testng.Assert.assertTrue;
 
-public class FileUploadTests extends Base {
+public class FileUploadTests extends BaseTests {
 
     //Upload file and assert if uploaded successfully
     @Test

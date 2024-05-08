@@ -1,12 +1,13 @@
-package firstPackage;
+package forgotPasswordTests;
 
-import Base.Base;
+import base.BaseTests;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
 
 import static org.testng.Assert.assertTrue;
 
-public class ForgotPasswordTests extends Base {
+public class ForgotPasswordTests extends BaseTests {
 
 
     @Test
@@ -15,7 +16,8 @@ public class ForgotPasswordTests extends Base {
         driver.findElement(By.linkText("Forgot Password")).click();
         driver.findElement(By.id("email")).sendKeys("agharam@qa.team");
         driver.findElement(By.id("form_submit")).click();
-        assertTrue(driver.findElement(By.xpath("//h1[contains(text(),'Internal Server Error')]")).isDisplayed());
+        WebElement forgetPasswordResult = driver.findElement(By.xpath("//h1[contains(text(),'Internal Server Error')]"));
+        assertTrue(forgetPasswordResult.getText().contains("Internal Server Error"));
     }
 
 }
