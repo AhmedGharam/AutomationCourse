@@ -1,12 +1,12 @@
-package firstPackage;
+package statusCodesTests;
 
-import Base.Base;
+import base.BaseTests;
 import org.openqa.selenium.By;
 import org.testng.annotations.Test;
 
 import static org.testng.Assert.assertTrue;
 
-public class StatusCodesTests extends Base {
+public class StatusCodesTests extends BaseTests {
 
     @Test(priority = 1)
     public void successfulRequestStatusCode()
