@@ -1,44 +1,43 @@
 package statusCodesTests;
 
-import base.BaseTests;
+import Pages.*;
+import base.Base;
 import org.openqa.selenium.By;
 import org.testng.annotations.Test;
 
 import static org.testng.Assert.assertTrue;
 
-public class StatusCodesTests extends BaseTests {
+public class StatusCodesTests extends Base {
 
     @Test(priority = 1)
     public void successfulRequestStatusCode()
     {
-        driver.findElement(By.linkText("Status Codes")).click();
-        driver.findElement(By.linkText("200")).click();
-        assertTrue(driver.findElement(By.xpath("//p[contains(text(),'This page returned a 200 status code.')]")).isDisplayed());
+        StatusCodePage statusCodePage = homePage.clickOnStatusCodeLink();
+        StatusCode200Page statusCode200Page = statusCodePage.clickOnStatusCode200Link();
+        assertTrue(statusCode200Page.getStatusCode200Result());
     }
 
     @Test(priority = 2)
-    public void pageMovedStatusCode()
-    {
-        driver.findElement(By.linkText("Status Codes")).click();
-        driver.findElement(By.linkText("301")).click();
-        assertTrue(driver.findElement(By.xpath("//p[contains(text(),'This page returned a 301 status code.')]")).isDisplayed());
+    public void pageMovedStatusCode() {
+        StatusCodePage statusCodePage = homePage.clickOnStatusCodeLink();
+        StatusCode301Page statusCode301Page = statusCodePage.clickOnStatusCode301Link();
+        assertTrue(statusCode301Page.getStatusCode301Result());
     }
 
     @Test(priority = 3)
     public void notFoundStatusCode()
     {
-        driver.findElement(By.linkText("Status Codes")).click();
-        driver.findElement(By.linkText("404")).click();
-        assertTrue(driver.findElement(By.xpath("//p[contains(text(),'This page returned a 404 status code.')]")).isDisplayed());
+        StatusCodePage statusCodePage = homePage.clickOnStatusCodeLink();
+        StatusCode404Page statusCode404Page = statusCodePage.clickOnStatusCode404Link();
+        assertTrue(statusCode404Page.getStatusCode404Result());
     }
 
     @Test(priority = 4)
     public void internalServerErrorStatusCode()
     {
-        driver.findElement(By.linkText("Status Codes")).click();
-        driver.findElement(By.linkText("500")).click();
-        assertTrue(driver.findElement(By.xpath("//p[contains(text(),'This page returned a 500 status code.')]")).isDisplayed());
+        StatusCodePage statusCodePage = homePage.clickOnStatusCodeLink();
+        StatusCode500Page statusCode500Page = statusCodePage.clickOnStatusCode500Link();
+        assertTrue(statusCode500Page.getStatusCode500Result());
     }
-
 
 }
